@@ -24,7 +24,6 @@ float launchPos_Y = 0;
 float screenWidth = 0;
 float screenHeight = 0;
 
-
 //Changes world state
 void update()
 {
@@ -39,15 +38,15 @@ void draw()
 	ClearBackground(BLUE);
 	DrawText("GAME2005 Paul Bernard-Hall 101031336", 10, float(GetScreenHeight() - 30), 20, WHITE);
 
-	GuiSliderBar(Rectangle{ 10, 15, 1000, 20 }, "", TextFormat("%.2f", time), &time, 0, 240);
+	GuiSliderBar(Rectangle{ 100, 15, 1000, 20 }, "", TextFormat("%.2f", time), &time, 0, 240);
 
-	GuiSliderBar(Rectangle{ 10, 40, 500, 30 }, "Speed", TextFormat("%.0f", speed), &speed, -1000, 1000);
+	GuiSliderBar(Rectangle{ 100, 40, 500, 30 }, "Speed", TextFormat("%.0f", speed), &speed, -1000, 1000);
 
-	GuiSliderBar(Rectangle{ 10, 80, 500, 30 }, "Angle", TextFormat("%.0f Degrees", angle), &angle, -180, 180);
+	GuiSliderBar(Rectangle{ 100, 80, 500, 30 }, "Angle", TextFormat("%.0f Degrees", angle), &angle, -180, 180);
 
-	GuiSliderBar(Rectangle{ 10, 120, 500, 30 }, "StartPOS_X", TextFormat("%.0f X", launchPos_X), &launchPos_X, 100, screenWidth);
+	GuiSliderBar(Rectangle{ 100, 120, 500, 30 }, "POS X", TextFormat("%.0f X", launchPos_X), &launchPos_X, 100, screenWidth);
 
-	GuiSliderBar(Rectangle{ 10, 160, 500, 30 }, "StartPOS_Y", TextFormat("%.0f Y", launchPos_Y), &launchPos_Y, 300, screenHeight);
+	GuiSliderBar(Rectangle{ 100, 160, 500, 30 }, "POS Y", TextFormat("%.0f Y", launchPos_Y), &launchPos_Y, 300, screenHeight);
 
 	DrawText(TextFormat("T: %6.2f", time), GetScreenWidth() - 140, 10, 30, WHITE);
 
@@ -70,6 +69,9 @@ int main()
 
 	screenWidth = GetScreenWidth() - 100;
 	screenHeight = GetScreenHeight() - 100;
+
+	GuiSetStyle(DEFAULT, TEXT_SIZE, 24); // Set normal text size 
+	GuiSetStyle(DEFAULT, TEXT_COLOR_NORMAL, 0xFFFFFFFF); // Set normal font white (as an int lol)
 
 	while (!WindowShouldClose()) // Loops TARGET_FPS times per second
 	{
