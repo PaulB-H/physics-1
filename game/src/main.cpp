@@ -31,8 +31,8 @@ void update()
 void draw()
 {
 	BeginDrawing();
-	ClearBackground(BLACK);
-	DrawText("Joss Moo-Young 123456789", 10, float(GetScreenHeight() - 30), 20, LIGHTGRAY);
+	ClearBackground(BLUE);
+	DrawText("GAME2005 Paul Bernard-Hall 101031336", 10, float(GetScreenHeight() - 30), 20, LIGHTGRAY);
 
 
 	GuiSliderBar(Rectangle{ 10, 15, 1000, 20 }, "", TextFormat("%.2f", time), &time, 0, 240);
@@ -47,7 +47,7 @@ void draw()
 
 int main()
 {
-	InitWindow(InitialWidth, InitialHeight, "GAME2005 Joss Moo-Young 123456789");
+	InitWindow(InitialWidth, InitialHeight, "GAME2005 Paul Bernard-Hall 101031336");
 	SetTargetFPS(TARGET_FPS);
 
 	while (!WindowShouldClose()) // Loops TARGET_FPS times per second
