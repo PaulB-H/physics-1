@@ -70,7 +70,18 @@ int main()
 	screenWidth = GetScreenWidth() - 100;
 	screenHeight = GetScreenHeight() - 100;
 
-	GuiSetStyle(DEFAULT, TEXT_SIZE, 24); // Set normal text size 
+	//mserrat = LoadFont("Montserrat-Regular.ttf");
+
+	//******************************//
+	// Loading custom font - created resources dir and put ttf there
+	// resource: https://www.raylib.com/examples/text/loader.html?name=text_font_loading
+	// 
+	// Font resource: 
+	// https://fonts.google.com/specimen/Montserrat
+	//******************************//
+	Font mserrat = LoadFontEx("resources/Montserrat-Regular.ttf", 32, 0, 250); // Load font and set defaults
+	GuiSetFont(mserrat); // Use montserrat font as the... default font I guess?
+	GuiSetStyle(DEFAULT, TEXT_SIZE, 32); // Set text size 
 	GuiSetStyle(DEFAULT, TEXT_COLOR_NORMAL, 0xFFFFFFFF); // Set normal font white (as an int lol)
 
 	while (!WindowShouldClose()) // Loops TARGET_FPS times per second
