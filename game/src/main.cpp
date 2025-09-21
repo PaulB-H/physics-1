@@ -16,6 +16,15 @@ float time = 0;
 float speed = 100;
 float angle = 0;
 
+//Vector2 startPos = { 100, GetScreenHeight() - 100 };
+
+float launchPos_X = 100;
+float launchPos_Y = 0;
+
+float screenWidth = 0;
+float screenHeight = 0;
+
+
 //Changes world state
 void update()
 {
@@ -28,7 +37,7 @@ void draw()
 {
 	BeginDrawing();
 	ClearBackground(BLUE);
-	DrawText("GAME2005 Paul Bernard-Hall 101031336", 10, float(GetScreenHeight() - 30), 20, LIGHTGRAY);
+	DrawText("GAME2005 Paul Bernard-Hall 101031336", 10, float(GetScreenHeight() - 30), 20, WHITE);
 
 	GuiSliderBar(Rectangle{ 10, 15, 1000, 20 }, "", TextFormat("%.2f", time), &time, 0, 240);
 
@@ -36,14 +45,18 @@ void draw()
 
 	GuiSliderBar(Rectangle{ 10, 80, 500, 30 }, "Angle", TextFormat("%.0f Degrees", angle), &angle, -180, 180);
 
-	DrawText(TextFormat("T: %6.2f", time), GetScreenWidth() - 140, 10, 30, LIGHTGRAY);
+	GuiSliderBar(Rectangle{ 10, 120, 500, 30 }, "StartPOS_X", TextFormat("%.0f X", launchPos_X), &launchPos_X, 100, screenWidth);
 
-	Vector2 startPos = { 100, GetScreenHeight() - 100 };
+	GuiSliderBar(Rectangle{ 10, 160, 500, 30 }, "StartPOS_Y", TextFormat("%.0f Y", launchPos_Y), &launchPos_Y, 300, screenHeight);
+
+	DrawText(TextFormat("T: %6.2f", time), GetScreenWidth() - 140, 10, 30, WHITE);
+
+	Vector2 startPos = { launchPos_X, launchPos_Y };
 
 	Vector2 velocity = { speed * cos(angle * DEG2RAD), -speed * sin(angle * DEG2RAD) };
 
 	// draw line ex lets us set witdth i remember
-	DrawLineEx(startPos, startPos + velocity, 3, RED);
+	DrawLineEx(startPos, startPos + velocity, 5, RED);
 
 	EndDrawing();
 }
@@ -52,6 +65,11 @@ int main()
 {
 	InitWindow(InitialWidth, InitialHeight, "GAME2005 Paul Bernard-Hall 101031336");
 	SetTargetFPS(TARGET_FPS);
+
+	launchPos_Y = GetScreenHeight() - 100;
+
+	screenWidth = GetScreenWidth() - 100;
+	screenHeight = GetScreenHeight() - 100;
 
 	while (!WindowShouldClose()) // Loops TARGET_FPS times per second
 	{
