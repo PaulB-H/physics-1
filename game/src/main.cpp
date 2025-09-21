@@ -38,7 +38,7 @@ void draw()
 	ClearBackground(BLUE);
 	DrawText("GAME2005 Paul Bernard-Hall 101031336", 10, float(GetScreenHeight() - 30), 20, WHITE);
 
-	GuiSliderBar(Rectangle{ 100, 15, 1000, 20 }, "", TextFormat("%.2f", time), &time, 0, 240);
+	//GuiSliderBar(Rectangle{ 100, 15, 500, 20 }, "Time", TextFormat("%.2f", time), &time, 0, 240);
 
 	GuiSliderBar(Rectangle{ 100, 40, 500, 30 }, "Speed", TextFormat("%.0f", speed), &speed, -1000, 1000);
 
