@@ -52,6 +52,7 @@ void draw()
 
 	Vector2 startPos = { launchPos_X, launchPos_Y };
 
+	// Our angle is set in degrees but cos() and sin() need rad 
 	Vector2 velocity = { speed * cos(angle * DEG2RAD), -speed * sin(angle * DEG2RAD) };
 
 	// draw line ex lets us set witdth i remember
