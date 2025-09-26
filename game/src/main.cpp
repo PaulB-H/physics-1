@@ -21,6 +21,10 @@ float angle = 0;
 float launchPos_X = 100;
 float launchPos_Y = 0;
 
+//Vector2 position = {500, 500}; // We gonna use launchPos_X and launchPos_Y
+Vector2 velocity = { 0, 0 };
+Vector2 accelerationGravity = { 0, 9 };
+
 float screenWidth = 0;
 float screenHeight = 0;
 
