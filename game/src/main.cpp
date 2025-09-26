@@ -64,9 +64,11 @@ void draw()
 
 	GuiSliderBar(Rectangle{ 100, 120, 500, 30 }, "Gravity Y", TextFormat("Gravity Y: %.0f Px/sec^2", accelerationGravity.y), &accelerationGravity.y, -1000, 1000);
 
-	GuiSliderBar(Rectangle{ 100, 160, 500, 30 }, "POS X", TextFormat("%.0f X", launchPos_X), &launchPos_X, 100, screenWidth);
+	GuiSliderBar(Rectangle{ 100, 160, 500, 30 }, "Gravity X", TextFormat("Gravity X: %.0f Px/sec^2", accelerationGravity.x), &accelerationGravity.x, -1000, 1000);
 
-	GuiSliderBar(Rectangle{ 100, 200, 500, 30 }, "POS Y", TextFormat("%.0f Y", launchPos_Y), &launchPos_Y, 300, screenHeight);
+	GuiSliderBar(Rectangle{ 100, 200, 500, 30 }, "POS X", TextFormat("%.0f X", launchPos_X), &launchPos_X, 100, screenWidth);
+
+	GuiSliderBar(Rectangle{ 100, 240, 500, 30 }, "POS Y", TextFormat("%.0f Y", launchPos_Y), &launchPos_Y, 300, screenHeight);
 
 	DrawText(TextFormat("T: %6.2f", time), GetScreenWidth() - 140, 10, 30, WHITE);
 
