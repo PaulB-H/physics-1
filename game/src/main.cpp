@@ -37,12 +37,16 @@ void update()
 	// vel = change in position / time ~~ Therefore, change in position = vel * time
 	position += velocity * dt;
 
+	// accel = deltaV / time (change in velocity over time) therefore, deltaV = accel * time
+	velocity = velocity + accelerationGravity * dt;
+
+
 	if (IsKeyPressed(KEY_SPACE))
 	{
+		position = { 100, (float)GetScreenHeight() - 100 };
 		velocity = { speed * (float)cos(angle * DEG2RAD), -speed * (float)sin(angle * DEG2RAD) };
 	}
 
-	// accel = deltaV / time (change in velocity over time) therefore, deltaV = accel * time
 }
 
 //Display world state
