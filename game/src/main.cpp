@@ -21,7 +21,7 @@ float angle = 0;
 float launchPos_X = 100;
 float launchPos_Y = 0;
 
-//Vector2 position = {500, 500}; // We gonna use launchPos_X and launchPos_Y
+Vector2 position = {500, 500}; // We gonna use launchPos_X and launchPos_Y
 Vector2 velocity = { 0, 0 };
 Vector2 accelerationGravity = { 0, 9 };
 
@@ -33,6 +33,16 @@ void update()
 {
 	dt = 1.0f / TARGET_FPS;
 	time += dt;
+
+	// vel = change in position / time ~~ Therefore, change in position = vel * time
+	position += velocity * dt;
+
+	if (IsKeyPressed(KEY_SPACE))
+	{
+		velocity = { speed * (float)cos(angle * DEG2RAD), -speed * (float)sin(angle * DEG2RAD) };
+	}
+
+	// accel = deltaV / time (change in velocity over time) therefore, deltaV = accel * time
 }
 
 //Display world state
