@@ -109,6 +109,11 @@ int main()
 	GuiSetStyle(DEFAULT, TEXT_SIZE, 32); // Set text size 
 	GuiSetStyle(DEFAULT, TEXT_COLOR_NORMAL, 0xFFFFFFFF); // Set normal font white (as an int lol)
 
+	// COMPONENT / STATE / COLOR
+	// To fix my slider text becomming un-readable when hover / clicked
+	GuiSetStyle(SLIDER, TEXT_COLOR_FOCUSED, 0xFF0000FF);
+	GuiSetStyle(SLIDER, TEXT_COLOR_PRESSED, 0xFF0000FF);
+
 	while (!WindowShouldClose()) // Loops TARGET_FPS times per second
 	{
 		update();
