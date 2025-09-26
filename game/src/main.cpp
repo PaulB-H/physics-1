@@ -43,7 +43,7 @@ void update()
 
 	if (IsKeyPressed(KEY_SPACE))
 	{
-		position = { 100, (float)GetScreenHeight() - 100 };
+		position = { launchPos_X, launchPos_Y }; // We want to .. place projectile at our dynamic LaunchX/LaunchY pos
 		velocity = { speed * (float)cos(angle * DEG2RAD), -speed * (float)sin(angle * DEG2RAD) };
 	}
 
