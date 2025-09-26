@@ -74,6 +74,8 @@ void draw()
 	// draw line ex lets us set witdth i remember
 	DrawLineEx(startPos, startPos + velocity, 5, RED);
 
+	DrawCircle(position.x, position.y, 15, RED);
+
 	EndDrawing();
 }
 
